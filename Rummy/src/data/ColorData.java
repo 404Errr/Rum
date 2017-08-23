@@ -14,9 +14,9 @@ public interface ColorData {
 	static Color getColor(int color) {
 		switch (color) {
 		case BLACK: return new Color(0x000000);
-		case BLUE: return new Color(0x5050ff);
-		case RED: return new Color(0xff5050);
-		case ORANGE: return new Color(0xffa500);
+		case BLUE: return new Color(0x5050e0);
+		case RED: return new Color(0xe03030);
+		case ORANGE: return new Color(0xffc000);
 		}
 		return null;
 	}

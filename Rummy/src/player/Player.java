@@ -12,4 +12,16 @@ public class Player {
 		hand = new ArrayList<>();
 		this.AIControlled = AIControlled;
 	}
+
+	public ArrayList<Tile> getHand() {
+		return hand;
+	}
+
+	public boolean isAIControlled() {
+		return AIControlled;
+	}
+	
+	public void giveTile(Tile tile) {
+		hand.add(tile);
+	}
 }
