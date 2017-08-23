@@ -1,26 +1,34 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
+import player.Player;
 import set.Set;
+import tile.Tile;
 
 public class Game {
 	public static ArrayList<Set> allSets;
-
+	public static ArrayList<Player> players;
+	public static ArrayList<Tile> deck;
+	
 	public static void init() {
 		allSets = new ArrayList<>();
-//		Set set = new Set();
-//		allSets.add(set);
-//		set.add(new Tile(0, 3), false);
-//		set.add(new Tile(0, 4), false);
-//		set.add(new Tile(0, 5), false);
-//		set.add(new Tile(0, 7), false);
-//		set.add(new Tile(0, 6), false);
-//		set.add(new Tile(0, 8), false);
-//		set.add(new Tile(0, 2), false);
-//		System.out.println(allSets);
-//		set.split(3, allSets);
-		System.out.println(allSets);
+		players = new ArrayList<>();
+		players.add(new Player(false));
+		players.add(new Player(true));
+		
+		deck = new ArrayList<>();
+		for (int twice = 0;twice<2;twice++) {
+			for (int c = 0;c<4;c++) {
+				for (int v = 1;v<=13;v++) {
+					deck.add(new Tile(c, v));
+				}
+			}
+		}
+		Collections.shuffle(deck);
+		
+		System.out.println(deck);
 	}
 
 	public static void run() {

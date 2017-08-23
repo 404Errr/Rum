@@ -38,6 +38,13 @@ public class Set extends ArrayList<Tile> implements SetData {
 		return -1;
 	}
 	
+	@Override
+	public boolean add(Tile tile) {
+		boolean result = super.add(tile);
+		sort();
+		return result;
+	}
+	
 	public boolean add(Tile tile, boolean enforceValid) {
 		Set newSet = new Set();
 		for (int i = 0;i<size();i++) {
@@ -46,7 +53,7 @@ public class Set extends ArrayList<Tile> implements SetData {
 		newSet.add(tile);
 		boolean valid = newSet.isValid();
 		if (!enforceValid||valid) {
-			add(size(), tile);
+			super.add(size(), tile);
 		}
 		sort();
 		return valid;

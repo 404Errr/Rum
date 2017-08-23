@@ -20,6 +20,8 @@ public class Tile implements Comparable<Tile> {
 	public int compareTo(Tile that) {
 		if (this.value>that.value) return 1;
 		if (this.value<that.value) return -1;
+		if (this.color>that.color) return 1;
+		if (this.color<that.color) return -1;
 		return 0;
 	}
 
